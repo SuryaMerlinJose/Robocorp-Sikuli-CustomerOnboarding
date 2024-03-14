@@ -1,0 +1,1153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.10.12 on win32)" generated="20240314 10:29:53.988" rpa="true" schemaversion="4">
+<suite id="s1" name="Index" source="c:\Users\Surya\Documents\GitHub\Robocorp-Sikuli-CustomerOnboarding\CustomerOnboarding\Resources\Index.robot">
+<test id="s1-t1" name="Customer Onboarding" line="73">
+<kw name="Scroll Page">
+<kw name="Click" library="SikuliLibrary">
+<arg>${scroll}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:30:01.060" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392400300.png'/&gt;
+[log] CLICK on L[1316,701]@S(0) (572 msec)</msg>
+<status status="PASS" starttime="20240314 10:29:59.882" endtime="20240314 10:30:01.062"/>
+</kw>
+<kw name="Wheel Down" library="SikuliLibrary">
+<arg>5</arg>
+<doc>Wheel down
+ Move mouse to the target, and wheel down with give steps</doc>
+<status status="PASS" starttime="20240314 10:30:01.062" endtime="20240314 10:30:01.356"/>
+</kw>
+<status status="PASS" starttime="20240314 10:29:59.882" endtime="20240314 10:30:01.356"/>
+</kw>
+<kw name="Fill the form using the data from the Excel file">
+<kw name="Read table from CSV" library="RPA.Tables">
+<var>${customer}</var>
+<arg>${csv}</arg>
+<arg>dialect=excel</arg>
+<doc>Read a CSV file as a table.</doc>
+<msg timestamp="20240314 10:30:01.370" level="INFO">${customer} = Table(columns=['Company Name', 'Customer ID', 'Primary Contact', 'Street Address', 'City', 'State', 'Zip', 'Email Address', 'Offers Discounts', 'Non-Disclosure On File'], rows=7)</msg>
+<status status="PASS" starttime="20240314 10:30:01.356" endtime="20240314 10:30:01.370"/>
+</kw>
+<for flavor="IN">
+<var>${customers}</var>
+<value>@{customer}</value>
+<iter>
+<var name="${customers}">{'Company Name': 'Pathfinder Roofing and Siding', 'Customer ID': 'D9372416492', 'Primary Contact': 'Ryan Neises', 'Street Address': '5423 Kirkstone Dr', 'City': 'Nashville', 'State': 'TN', 'Zip': '370...</var>
+<kw name="Fill and submit the form for one person">
+<arg>${customers}</arg>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${customer_name}</arg>
+<arg>${customers}[Company Name]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:04.946" level="INFO">Input Text:
+Pathfinder Roofing and Siding</msg>
+<msg timestamp="20240314 10:30:04.946" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392401583.png'/&gt;
+[log] CLICK on L[193,188]@S(0) (557 msec)
+[log]  TYPE "Pathfinder Roofing and Siding"</msg>
+<status status="PASS" starttime="20240314 10:30:01.374" endtime="20240314 10:30:04.946"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${customer_id}</arg>
+<arg>${customers}[Customer ID]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:06.946" level="INFO">Input Text:
+D9372416492</msg>
+<msg timestamp="20240314 10:30:06.946" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392405152.png'/&gt;
+[log] CLICK on L[176,248]@S(0) (566 msec)
+[log]  TYPE "D9372416492"</msg>
+<status status="PASS" starttime="20240314 10:30:04.946" endtime="20240314 10:30:06.946"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${primary_contact}</arg>
+<arg>${customers}[Primary Contact]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:08.863" level="INFO">Input Text:
+Ryan Neises</msg>
+<msg timestamp="20240314 10:30:08.863" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392407112.png'/&gt;
+[log] CLICK on L[190,305]@S(0) (562 msec)
+[log]  TYPE "Ryan Neises"</msg>
+<status status="PASS" starttime="20240314 10:30:06.946" endtime="20240314 10:30:08.863"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${street_address}</arg>
+<arg>${customers}[Street Address]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:11.260" level="INFO">Input Text:
+5423 Kirkstone Dr</msg>
+<msg timestamp="20240314 10:30:11.260" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392409017.png'/&gt;
+[log] CLICK on L[180,364]@S(0) (563 msec)
+[log]  TYPE "5423 Kirkstone Dr"</msg>
+<status status="PASS" starttime="20240314 10:30:08.863" endtime="20240314 10:30:11.260"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${city}</arg>
+<arg>${customers}[City]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:12.962" level="INFO">Input Text:
+Nashville</msg>
+<msg timestamp="20240314 10:30:12.962" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392411430.png'/&gt;
+[log] CLICK on L[145,423]@S(0) (562 msec)
+[log]  TYPE "Nashville"</msg>
+<status status="PASS" starttime="20240314 10:30:11.260" endtime="20240314 10:30:12.962"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>${state}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:30:13.804" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392413111.png'/&gt;
+[log] CLICK on L[823,424]@S(0) (568 msec)</msg>
+<status status="PASS" starttime="20240314 10:30:12.963" endtime="20240314 10:30:13.804"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${state}</arg>
+<arg>${customers}[State]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:14.456" level="INFO">Input Text:
+TN</msg>
+<msg timestamp="20240314 10:30:14.456" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392413980.png'/&gt;
+[log] CLICK on L[823,424]@S(0) (75 msec)
+[log]  TYPE "TN"</msg>
+<status status="PASS" starttime="20240314 10:30:13.806" endtime="20240314 10:30:14.458"/>
+</kw>
+<kw name="Press Keys" library="RPA.Desktop">
+<arg>ENTER</arg>
+<doc>Press multiple keys down simultaneously.</doc>
+<msg timestamp="20240314 10:30:14.458" level="INFO">Pressing keys: Key.enter</msg>
+<status status="PASS" starttime="20240314 10:30:14.458" endtime="20240314 10:30:14.458"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${zip}</arg>
+<arg>${customers}[Zip]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:15.796" level="INFO">Input Text:
+37011</msg>
+<msg timestamp="20240314 10:30:15.796" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392414665.png'/&gt;
+[log] CLICK on L[866,423]@S(0) (566 msec)
+[log]  TYPE "37011"</msg>
+<status status="PASS" starttime="20240314 10:30:14.460" endtime="20240314 10:30:15.796"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${email_input}</arg>
+<arg>${customers}[Email Address]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:18.595" level="INFO">Input Text:
+MisterRyGuy@gmail.com</msg>
+<msg timestamp="20240314 10:30:18.595" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392415947.png'/&gt;
+[log] CLICK on L[151,480]@S(0) (565 msec)
+[log]  TYPE "MisterRyGuy@gmail.com"</msg>
+<status status="PASS" starttime="20240314 10:30:15.796" endtime="20240314 10:30:18.595"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${customers}[Offers Discounts]&quot; == &quot;YES&quot;">
+<kw name="Click" library="SikuliLibrary">
+<arg>${yes}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:30:19.477" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392418763.png'/&gt;
+[log] CLICK on L[139,587]@S(0) (563 msec)</msg>
+<status status="PASS" starttime="20240314 10:30:18.595" endtime="20240314 10:30:19.477"/>
+</kw>
+<status status="PASS" starttime="20240314 10:30:18.595" endtime="20240314 10:30:19.477"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" library="SikuliLibrary">
+<arg>${no}</arg>
+<doc>Click</doc>
+<status status="NOT RUN" starttime="20240314 10:30:19.477" endtime="20240314 10:30:19.477"/>
+</kw>
+<status status="NOT RUN" starttime="20240314 10:30:19.477" endtime="20240314 10:30:19.477"/>
+</branch>
+<status status="PASS" starttime="20240314 10:30:18.595" endtime="20240314 10:30:19.477"/>
+</if>
+<if>
+<branch type="IF" condition="&quot;${customers}[Non-Disclosure On File]&quot; == &quot;YES&quot;">
+<kw name="Click" library="SikuliLibrary">
+<arg>${nda}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:30:20.345" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392419648.png'/&gt;
+[log] CLICK on L[800,592]@S(0) (570 msec)</msg>
+<status status="PASS" starttime="20240314 10:30:19.482" endtime="20240314 10:30:20.345"/>
+</kw>
+<status status="PASS" starttime="20240314 10:30:19.477" endtime="20240314 10:30:20.345"/>
+</branch>
+<status status="PASS" starttime="20240314 10:30:19.477" endtime="20240314 10:30:20.345"/>
+</if>
+<kw name="Click" library="SikuliLibrary">
+<arg>${register}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:30:21.225" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392420513.png'/&gt;
+[log] CLICK on L[187,661]@S(0) (567 msec)</msg>
+<status status="PASS" starttime="20240314 10:30:20.345" endtime="20240314 10:30:21.225"/>
+</kw>
+<status status="PASS" starttime="20240314 10:30:01.374" endtime="20240314 10:30:21.225"/>
+</kw>
+<status status="PASS" starttime="20240314 10:30:01.372" endtime="20240314 10:30:21.225"/>
+</iter>
+<iter>
+<var name="${customers}">{'Company Name': 'Flashpoint', 'Customer ID': 'D9374353758', 'Primary Contact': 'Tim Langer', 'Street Address': '3827 Ellen Dr', 'City': 'Lexington', 'State': 'KY', 'Zip': '75426', 'Email Address': 'R...</var>
+<kw name="Fill and submit the form for one person">
+<arg>${customers}</arg>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${customer_name}</arg>
+<arg>${customers}[Company Name]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:23.044" level="INFO">Input Text:
+Flashpoint</msg>
+<msg timestamp="20240314 10:30:23.044" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392421397.png'/&gt;
+[log] CLICK on L[193,188]@S(0) (560 msec)
+[log]  TYPE "Flashpoint"</msg>
+<status status="PASS" starttime="20240314 10:30:21.225" endtime="20240314 10:30:23.044"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${customer_id}</arg>
+<arg>${customers}[Customer ID]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:24.988" level="INFO">Input Text:
+D9374353758</msg>
+<msg timestamp="20240314 10:30:24.988" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392423249.png'/&gt;
+[log] CLICK on L[176,248]@S(0) (591 msec)
+[log]  TYPE "D9374353758"</msg>
+<status status="PASS" starttime="20240314 10:30:23.044" endtime="20240314 10:30:24.988"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${primary_contact}</arg>
+<arg>${customers}[Primary Contact]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:26.843" level="INFO">Input Text:
+Tim Langer</msg>
+<msg timestamp="20240314 10:30:26.843" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392425159.png'/&gt;
+[log] CLICK on L[190,305]@S(0) (569 msec)
+[log]  TYPE "Tim Langer"</msg>
+<status status="PASS" starttime="20240314 10:30:24.988" endtime="20240314 10:30:26.843"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${street_address}</arg>
+<arg>${customers}[Street Address]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:28.959" level="INFO">Input Text:
+3827 Ellen Dr</msg>
+<msg timestamp="20240314 10:30:28.959" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392427042.png'/&gt;
+[log] CLICK on L[180,364]@S(0) (553 msec)
+[log]  TYPE "3827 Ellen Dr"</msg>
+<status status="PASS" starttime="20240314 10:30:26.843" endtime="20240314 10:30:28.959"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${city}</arg>
+<arg>${customers}[City]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:30.645" level="INFO">Input Text:
+Lexington</msg>
+<msg timestamp="20240314 10:30:30.645" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392429127.png'/&gt;
+[log] CLICK on L[145,423]@S(0) (552 msec)
+[log]  TYPE "Lexington"</msg>
+<status status="PASS" starttime="20240314 10:30:28.959" endtime="20240314 10:30:30.645"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>${state}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:30:31.501" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392430795.png'/&gt;
+[log] CLICK on L[823,424]@S(0) (566 msec)</msg>
+<status status="PASS" starttime="20240314 10:30:30.645" endtime="20240314 10:30:31.501"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${state}</arg>
+<arg>${customers}[State]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:32.116" level="INFO">Input Text:
+KY</msg>
+<msg timestamp="20240314 10:30:32.116" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392431663.png'/&gt;
+[log] CLICK on L[823,424]@S(0) (72 msec)
+[log]  TYPE "KY"</msg>
+<status status="PASS" starttime="20240314 10:30:31.502" endtime="20240314 10:30:32.116"/>
+</kw>
+<kw name="Press Keys" library="RPA.Desktop">
+<arg>ENTER</arg>
+<doc>Press multiple keys down simultaneously.</doc>
+<msg timestamp="20240314 10:30:32.116" level="INFO">Pressing keys: Key.enter</msg>
+<status status="PASS" starttime="20240314 10:30:32.116" endtime="20240314 10:30:32.116"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${zip}</arg>
+<arg>${customers}[Zip]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:33.474" level="INFO">Input Text:
+75426</msg>
+<msg timestamp="20240314 10:30:33.474" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392432296.png'/&gt;
+[log] CLICK on L[866,423]@S(0) (587 msec)
+[log]  TYPE "75426"</msg>
+<status status="PASS" starttime="20240314 10:30:32.116" endtime="20240314 10:30:33.474"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${email_input}</arg>
+<arg>${customers}[Email Address]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:36.442" level="INFO">Input Text:
+RealRikSmits@yahoo.com</msg>
+<msg timestamp="20240314 10:30:36.442" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392433660.png'/&gt;
+[log] CLICK on L[151,480]@S(0) (562 msec)
+[log]  TYPE "RealRikSmits@yahoo.com"</msg>
+<status status="PASS" starttime="20240314 10:30:33.474" endtime="20240314 10:30:36.442"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${customers}[Offers Discounts]&quot; == &quot;YES&quot;">
+<kw name="Click" library="SikuliLibrary">
+<arg>${yes}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:30:37.325" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392436611.png'/&gt;
+[log] CLICK on L[139,587]@S(0) (562 msec)</msg>
+<status status="PASS" starttime="20240314 10:30:36.442" endtime="20240314 10:30:37.325"/>
+</kw>
+<status status="PASS" starttime="20240314 10:30:36.442" endtime="20240314 10:30:37.325"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" library="SikuliLibrary">
+<arg>${no}</arg>
+<doc>Click</doc>
+<status status="NOT RUN" starttime="20240314 10:30:37.325" endtime="20240314 10:30:37.325"/>
+</kw>
+<status status="NOT RUN" starttime="20240314 10:30:37.325" endtime="20240314 10:30:37.325"/>
+</branch>
+<status status="PASS" starttime="20240314 10:30:36.442" endtime="20240314 10:30:37.325"/>
+</if>
+<if>
+<branch type="IF" condition="&quot;${customers}[Non-Disclosure On File]&quot; == &quot;YES&quot;">
+<kw name="Click" library="SikuliLibrary">
+<arg>${nda}</arg>
+<doc>Click</doc>
+<status status="NOT RUN" starttime="20240314 10:30:37.330" endtime="20240314 10:30:37.330"/>
+</kw>
+<status status="NOT RUN" starttime="20240314 10:30:37.325" endtime="20240314 10:30:37.330"/>
+</branch>
+<status status="PASS" starttime="20240314 10:30:37.325" endtime="20240314 10:30:37.331"/>
+</if>
+<kw name="Click" library="SikuliLibrary">
+<arg>${register}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:30:38.275" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392437543.png'/&gt;
+[log] CLICK on L[187,661]@S(0) (563 msec)</msg>
+<status status="PASS" starttime="20240314 10:30:37.331" endtime="20240314 10:30:38.275"/>
+</kw>
+<status status="PASS" starttime="20240314 10:30:21.225" endtime="20240314 10:30:38.275"/>
+</kw>
+<status status="PASS" starttime="20240314 10:30:21.225" endtime="20240314 10:30:38.275"/>
+</iter>
+<iter>
+<var name="${customers}">{'Company Name': 'Crooked Nail Architecture', 'Customer ID': 'D9372478346', 'Primary Contact': 'Matt Ireton', 'Street Address': '18273 Cheltenham Dr', 'City': 'Dayton', 'State': 'OH', 'Zip': '45459', ...</var>
+<kw name="Fill and submit the form for one person">
+<arg>${customers}</arg>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${customer_name}</arg>
+<arg>${customers}[Company Name]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:41.532" level="INFO">Input Text:
+Crooked Nail Architecture</msg>
+<msg timestamp="20240314 10:30:41.532" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392438463.png'/&gt;
+[log] CLICK on L[193,188]@S(0) (564 msec)
+[log]  TYPE "Crooked Nail Architecture"</msg>
+<status status="PASS" starttime="20240314 10:30:38.282" endtime="20240314 10:30:41.532"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${customer_id}</arg>
+<arg>${customers}[Customer ID]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:43.494" level="INFO">Input Text:
+D9372478346</msg>
+<msg timestamp="20240314 10:30:43.494" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392441725.png'/&gt;
+[log] CLICK on L[176,248]@S(0) (560 msec)
+[log]  TYPE "D9372478346"</msg>
+<status status="PASS" starttime="20240314 10:30:41.532" endtime="20240314 10:30:43.494"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${primary_contact}</arg>
+<arg>${customers}[Primary Contact]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:45.375" level="INFO">Input Text:
+Matt Ireton</msg>
+<msg timestamp="20240314 10:30:45.375" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392443658.png'/&gt;
+[log] CLICK on L[190,305]@S(0) (552 msec)
+[log]  TYPE "Matt Ireton"</msg>
+<status status="PASS" starttime="20240314 10:30:43.494" endtime="20240314 10:30:45.375"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${street_address}</arg>
+<arg>${customers}[Street Address]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:48.022" level="INFO">Input Text:
+18273 Cheltenham Dr</msg>
+<msg timestamp="20240314 10:30:48.022" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392445574.png'/&gt;
+[log] CLICK on L[180,364]@S(0) (553 msec)
+[log]  TYPE "18273 Cheltenham Dr"</msg>
+<status status="PASS" starttime="20240314 10:30:45.375" endtime="20240314 10:30:48.022"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${city}</arg>
+<arg>${customers}[City]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:49.456" level="INFO">Input Text:
+Dayton</msg>
+<msg timestamp="20240314 10:30:49.456" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392448192.png'/&gt;
+[log] CLICK on L[145,423]@S(0) (580 msec)
+[log]  TYPE "Dayton"</msg>
+<status status="PASS" starttime="20240314 10:30:48.022" endtime="20240314 10:30:49.456"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>${state}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:30:50.348" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392449639.png'/&gt;
+[log] CLICK on L[823,424]@S(0) (551 msec)</msg>
+<status status="PASS" starttime="20240314 10:30:49.456" endtime="20240314 10:30:50.349"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${state}</arg>
+<arg>${customers}[State]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:51.021" level="INFO">Input Text:
+OH</msg>
+<msg timestamp="20240314 10:30:51.021" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392450544.png'/&gt;
+[log] CLICK on L[823,424]@S(0) (75 msec)
+[log]  TYPE "OH"</msg>
+<status status="PASS" starttime="20240314 10:30:50.350" endtime="20240314 10:30:51.021"/>
+</kw>
+<kw name="Press Keys" library="RPA.Desktop">
+<arg>ENTER</arg>
+<doc>Press multiple keys down simultaneously.</doc>
+<msg timestamp="20240314 10:30:51.021" level="INFO">Pressing keys: Key.enter</msg>
+<status status="PASS" starttime="20240314 10:30:51.021" endtime="20240314 10:30:51.021"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${zip}</arg>
+<arg>${customers}[Zip]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:52.452" level="INFO">Input Text:
+45459</msg>
+<msg timestamp="20240314 10:30:52.452" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392451227.png'/&gt;
+[log] CLICK on L[866,423]@S(0) (569 msec)
+[log]  TYPE "45459"</msg>
+<status status="PASS" starttime="20240314 10:30:51.021" endtime="20240314 10:30:52.452"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${email_input}</arg>
+<arg>${customers}[Email Address]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:55.090" level="INFO">Input Text:
+bballirish23@aol.com</msg>
+<msg timestamp="20240314 10:30:55.090" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392452606.png'/&gt;
+[log] CLICK on L[151,480]@S(0) (573 msec)
+[log]  TYPE "bballirish23@aol.com"</msg>
+<status status="PASS" starttime="20240314 10:30:52.452" endtime="20240314 10:30:55.090"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${customers}[Offers Discounts]&quot; == &quot;YES&quot;">
+<kw name="Click" library="SikuliLibrary">
+<arg>${yes}</arg>
+<doc>Click</doc>
+<status status="NOT RUN" starttime="20240314 10:30:55.090" endtime="20240314 10:30:55.090"/>
+</kw>
+<status status="NOT RUN" starttime="20240314 10:30:55.090" endtime="20240314 10:30:55.090"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" library="SikuliLibrary">
+<arg>${no}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:30:55.931" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392455242.png'/&gt;
+[log] CLICK on L[196,587]@S(0) (571 msec)</msg>
+<status status="PASS" starttime="20240314 10:30:55.090" endtime="20240314 10:30:55.932"/>
+</kw>
+<status status="PASS" starttime="20240314 10:30:55.090" endtime="20240314 10:30:55.933"/>
+</branch>
+<status status="PASS" starttime="20240314 10:30:55.090" endtime="20240314 10:30:55.933"/>
+</if>
+<if>
+<branch type="IF" condition="&quot;${customers}[Non-Disclosure On File]&quot; == &quot;YES&quot;">
+<kw name="Click" library="SikuliLibrary">
+<arg>${nda}</arg>
+<doc>Click</doc>
+<status status="NOT RUN" starttime="20240314 10:30:55.934" endtime="20240314 10:30:55.934"/>
+</kw>
+<status status="NOT RUN" starttime="20240314 10:30:55.933" endtime="20240314 10:30:55.934"/>
+</branch>
+<status status="PASS" starttime="20240314 10:30:55.933" endtime="20240314 10:30:55.934"/>
+</if>
+<kw name="Click" library="SikuliLibrary">
+<arg>${register}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:30:56.777" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392456092.png'/&gt;
+[log] CLICK on L[187,661]@S(0) (550 msec)</msg>
+<status status="PASS" starttime="20240314 10:30:55.935" endtime="20240314 10:30:56.779"/>
+</kw>
+<status status="PASS" starttime="20240314 10:30:38.281" endtime="20240314 10:30:56.780"/>
+</kw>
+<status status="PASS" starttime="20240314 10:30:38.279" endtime="20240314 10:30:56.780"/>
+</iter>
+<iter>
+<var name="${customers}">{'Company Name': 'Hat Store', 'Customer ID': 'D9372542784', 'Primary Contact': 'Mitch Manders', 'Street Address': '1827 Gilead Rd', 'City': 'Indianaoplis', 'State': 'IN', 'Zip': '34578', 'Email Addres...</var>
+<kw name="Fill and submit the form for one person">
+<arg>${customers}</arg>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${customer_name}</arg>
+<arg>${customers}[Company Name]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:30:58.540" level="INFO">Input Text:
+Hat Store</msg>
+<msg timestamp="20240314 10:30:58.540" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392456959.png'/&gt;
+[log] CLICK on L[193,188]@S(0) (550 msec)
+[log]  TYPE "Hat Store"</msg>
+<status status="PASS" starttime="20240314 10:30:56.781" endtime="20240314 10:30:58.540"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${customer_id}</arg>
+<arg>${customers}[Customer ID]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:00.524" level="INFO">Input Text:
+D9372542784</msg>
+<msg timestamp="20240314 10:31:00.524" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392458748.png'/&gt;
+[log] CLICK on L[176,248]@S(0) (553 msec)
+[log]  TYPE "D9372542784"</msg>
+<status status="PASS" starttime="20240314 10:30:58.540" endtime="20240314 10:31:00.524"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${primary_contact}</arg>
+<arg>${customers}[Primary Contact]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:02.670" level="INFO">Input Text:
+Mitch Manders</msg>
+<msg timestamp="20240314 10:31:02.670" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392460705.png'/&gt;
+[log] CLICK on L[190,305]@S(0) (553 msec)
+[log]  TYPE "Mitch Manders"</msg>
+<status status="PASS" starttime="20240314 10:31:00.524" endtime="20240314 10:31:02.671"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${street_address}</arg>
+<arg>${customers}[Street Address]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:04.857" level="INFO">Input Text:
+1827 Gilead Rd</msg>
+<msg timestamp="20240314 10:31:04.857" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392462825.png'/&gt;
+[log] CLICK on L[180,364]@S(0) (567 msec)
+[log]  TYPE "1827 Gilead Rd"</msg>
+<status status="PASS" starttime="20240314 10:31:02.672" endtime="20240314 10:31:04.857"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${city}</arg>
+<arg>${customers}[City]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:06.807" level="INFO">Input Text:
+Indianaoplis</msg>
+<msg timestamp="20240314 10:31:06.807" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392465023.png'/&gt;
+[log] CLICK on L[145,423]@S(0) (551 msec)
+[log]  TYPE "Indianaoplis"</msg>
+<status status="PASS" starttime="20240314 10:31:04.857" endtime="20240314 10:31:06.807"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>${state}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:31:07.636" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392466965.png'/&gt;
+[log] CLICK on L[823,424]@S(0) (554 msec)</msg>
+<status status="PASS" starttime="20240314 10:31:06.807" endtime="20240314 10:31:07.636"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${state}</arg>
+<arg>${customers}[State]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:08.254" level="INFO">Input Text:
+IN</msg>
+<msg timestamp="20240314 10:31:08.254" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392467808.png'/&gt;
+[log] CLICK on L[823,424]@S(0) (69 msec)
+[log]  TYPE "IN"</msg>
+<status status="PASS" starttime="20240314 10:31:07.636" endtime="20240314 10:31:08.255"/>
+</kw>
+<kw name="Press Keys" library="RPA.Desktop">
+<arg>ENTER</arg>
+<doc>Press multiple keys down simultaneously.</doc>
+<msg timestamp="20240314 10:31:08.257" level="INFO">Pressing keys: Key.enter</msg>
+<status status="PASS" starttime="20240314 10:31:08.256" endtime="20240314 10:31:08.259"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${zip}</arg>
+<arg>${customers}[Zip]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:09.572" level="INFO">Input Text:
+34578</msg>
+<msg timestamp="20240314 10:31:09.572" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392468425.png'/&gt;
+[log] CLICK on L[866,423]@S(0) (566 msec)
+[log]  TYPE "34578"</msg>
+<status status="PASS" starttime="20240314 10:31:08.261" endtime="20240314 10:31:09.572"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${email_input}</arg>
+<arg>${customers}[Email Address]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:12.172" level="INFO">Input Text:
+bobo1710@gmail.com</msg>
+<msg timestamp="20240314 10:31:12.172" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392469722.png'/&gt;
+[log] CLICK on L[151,480]@S(0) (569 msec)
+[log]  TYPE "bobo1710@gmail.com"</msg>
+<status status="PASS" starttime="20240314 10:31:09.572" endtime="20240314 10:31:12.172"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${customers}[Offers Discounts]&quot; == &quot;YES&quot;">
+<kw name="Click" library="SikuliLibrary">
+<arg>${yes}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:31:13.054" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392472338.png'/&gt;
+[log] CLICK on L[139,587]@S(0) (572 msec)</msg>
+<status status="PASS" starttime="20240314 10:31:12.172" endtime="20240314 10:31:13.054"/>
+</kw>
+<status status="PASS" starttime="20240314 10:31:12.172" endtime="20240314 10:31:13.054"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" library="SikuliLibrary">
+<arg>${no}</arg>
+<doc>Click</doc>
+<status status="NOT RUN" starttime="20240314 10:31:13.054" endtime="20240314 10:31:13.054"/>
+</kw>
+<status status="NOT RUN" starttime="20240314 10:31:13.054" endtime="20240314 10:31:13.054"/>
+</branch>
+<status status="PASS" starttime="20240314 10:31:12.172" endtime="20240314 10:31:13.054"/>
+</if>
+<if>
+<branch type="IF" condition="&quot;${customers}[Non-Disclosure On File]&quot; == &quot;YES&quot;">
+<kw name="Click" library="SikuliLibrary">
+<arg>${nda}</arg>
+<doc>Click</doc>
+<status status="NOT RUN" starttime="20240314 10:31:13.054" endtime="20240314 10:31:13.054"/>
+</kw>
+<status status="NOT RUN" starttime="20240314 10:31:13.054" endtime="20240314 10:31:13.058"/>
+</branch>
+<status status="PASS" starttime="20240314 10:31:13.054" endtime="20240314 10:31:13.058"/>
+</if>
+<kw name="Click" library="SikuliLibrary">
+<arg>${register}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:31:13.903" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392473221.png'/&gt;
+[log] CLICK on L[187,661]@S(0) (562 msec)</msg>
+<status status="PASS" starttime="20240314 10:31:13.058" endtime="20240314 10:31:13.903"/>
+</kw>
+<status status="PASS" starttime="20240314 10:30:56.781" endtime="20240314 10:31:13.903"/>
+</kw>
+<status status="PASS" starttime="20240314 10:30:56.781" endtime="20240314 10:31:13.903"/>
+</iter>
+<iter>
+<var name="${customers}">{'Company Name': 'Compass Financial Services', 'Customer ID': 'D9374571574', 'Primary Contact': 'John Reagan', 'Street Address': '2354 Statesville Rd', 'City': 'Los Angeles', 'State': 'CA', 'Zip': '90...</var>
+<kw name="Fill and submit the form for one person">
+<arg>${customers}</arg>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${customer_name}</arg>
+<arg>${customers}[Company Name]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:17.203" level="INFO">Input Text:
+Compass Financial Services</msg>
+<msg timestamp="20240314 10:31:17.203" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392474072.png'/&gt;
+[log] CLICK on L[193,188]@S(0) (562 msec)
+[log]  TYPE "Compass Financial Services"</msg>
+<status status="PASS" starttime="20240314 10:31:13.903" endtime="20240314 10:31:17.203"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${customer_id}</arg>
+<arg>${customers}[Customer ID]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:19.221" level="INFO">Input Text:
+D9374571574</msg>
+<msg timestamp="20240314 10:31:19.221" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392477405.png'/&gt;
+[log] CLICK on L[176,248]@S(0) (557 msec)
+[log]  TYPE "D9374571574"</msg>
+<status status="PASS" starttime="20240314 10:31:17.203" endtime="20240314 10:31:19.221"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${primary_contact}</arg>
+<arg>${customers}[Primary Contact]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:21.204" level="INFO">Input Text:
+John Reagan</msg>
+<msg timestamp="20240314 10:31:21.204" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392479407.png'/&gt;
+[log] CLICK on L[190,305]@S(0) (550 msec)
+[log]  TYPE "John Reagan"</msg>
+<status status="PASS" starttime="20240314 10:31:19.221" endtime="20240314 10:31:21.205"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${street_address}</arg>
+<arg>${customers}[Street Address]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:23.804" level="INFO">Input Text:
+2354 Statesville Rd</msg>
+<msg timestamp="20240314 10:31:23.804" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392481357.png'/&gt;
+[log] CLICK on L[180,364]@S(0) (564 msec)
+[log]  TYPE "2354 Statesville Rd"</msg>
+<status status="PASS" starttime="20240314 10:31:21.206" endtime="20240314 10:31:23.804"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${city}</arg>
+<arg>${customers}[City]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:25.719" level="INFO">Input Text:
+Los Angeles</msg>
+<msg timestamp="20240314 10:31:25.719" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392483952.png'/&gt;
+[log] CLICK on L[145,423]@S(0) (567 msec)
+[log]  TYPE "Los Angeles"</msg>
+<status status="PASS" starttime="20240314 10:31:23.807" endtime="20240314 10:31:25.719"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>${state}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:31:26.576" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392485886.png'/&gt;
+[log] CLICK on L[823,424]@S(0) (568 msec)</msg>
+<status status="PASS" starttime="20240314 10:31:25.719" endtime="20240314 10:31:26.576"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${state}</arg>
+<arg>${customers}[State]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:27.185" level="INFO">Input Text:
+CA</msg>
+<msg timestamp="20240314 10:31:27.185" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392486740.png'/&gt;
+[log] CLICK on L[823,424]@S(0) (71 msec)
+[log]  TYPE "CA"</msg>
+<status status="PASS" starttime="20240314 10:31:26.577" endtime="20240314 10:31:27.185"/>
+</kw>
+<kw name="Press Keys" library="RPA.Desktop">
+<arg>ENTER</arg>
+<doc>Press multiple keys down simultaneously.</doc>
+<msg timestamp="20240314 10:31:27.185" level="INFO">Pressing keys: Key.enter</msg>
+<status status="PASS" starttime="20240314 10:31:27.185" endtime="20240314 10:31:27.185"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${zip}</arg>
+<arg>${customers}[Zip]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:28.536" level="INFO">Input Text:
+90001</msg>
+<msg timestamp="20240314 10:31:28.536" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392487385.png'/&gt;
+[log] CLICK on L[866,423]@S(0) (557 msec)
+[log]  TYPE "90001"</msg>
+<status status="PASS" starttime="20240314 10:31:27.185" endtime="20240314 10:31:28.536"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${email_input}</arg>
+<arg>${customers}[Email Address]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:31.120" level="INFO">Input Text:
+jwilly23@yahoo.com</msg>
+<msg timestamp="20240314 10:31:31.120" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392488703.png'/&gt;
+[log] CLICK on L[151,480]@S(0) (563 msec)
+[log]  TYPE "jwilly23@yahoo.com"</msg>
+<status status="PASS" starttime="20240314 10:31:28.536" endtime="20240314 10:31:31.120"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${customers}[Offers Discounts]&quot; == &quot;YES&quot;">
+<kw name="Click" library="SikuliLibrary">
+<arg>${yes}</arg>
+<doc>Click</doc>
+<status status="NOT RUN" starttime="20240314 10:31:31.120" endtime="20240314 10:31:31.120"/>
+</kw>
+<status status="NOT RUN" starttime="20240314 10:31:31.120" endtime="20240314 10:31:31.120"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" library="SikuliLibrary">
+<arg>${no}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:31:31.953" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392491269.png'/&gt;
+[log] CLICK on L[196,587]@S(0) (565 msec)</msg>
+<status status="PASS" starttime="20240314 10:31:31.120" endtime="20240314 10:31:31.953"/>
+</kw>
+<status status="PASS" starttime="20240314 10:31:31.120" endtime="20240314 10:31:31.956"/>
+</branch>
+<status status="PASS" starttime="20240314 10:31:31.120" endtime="20240314 10:31:31.957"/>
+</if>
+<if>
+<branch type="IF" condition="&quot;${customers}[Non-Disclosure On File]&quot; == &quot;YES&quot;">
+<kw name="Click" library="SikuliLibrary">
+<arg>${nda}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:31:32.784" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392492105.png'/&gt;
+[log] CLICK on L[800,592]@S(0) (555 msec)</msg>
+<status status="PASS" starttime="20240314 10:31:31.959" endtime="20240314 10:31:32.784"/>
+</kw>
+<status status="PASS" starttime="20240314 10:31:31.958" endtime="20240314 10:31:32.784"/>
+</branch>
+<status status="PASS" starttime="20240314 10:31:31.957" endtime="20240314 10:31:32.784"/>
+</if>
+<kw name="Click" library="SikuliLibrary">
+<arg>${register}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:31:33.666" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392492970.png'/&gt;
+[log] CLICK on L[187,661]@S(0) (565 msec)</msg>
+<status status="PASS" starttime="20240314 10:31:32.784" endtime="20240314 10:31:33.666"/>
+</kw>
+<status status="PASS" starttime="20240314 10:31:13.903" endtime="20240314 10:31:33.666"/>
+</kw>
+<status status="PASS" starttime="20240314 10:31:13.903" endtime="20240314 10:31:33.666"/>
+</iter>
+<iter>
+<var name="${customers}">{'Company Name': 'Shimetime Medical Supply', 'Customer ID': 'D7421418574', 'Primary Contact': 'John Shimer', 'Street Address': '12273 Volvo Parkway', 'City': 'Chesapeake', 'State': 'VA', 'Zip': '23320...</var>
+<kw name="Fill and submit the form for one person">
+<arg>${customers}</arg>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${customer_name}</arg>
+<arg>${customers}[Company Name]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:36.818" level="INFO">Input Text:
+Shimetime Medical Supply</msg>
+<msg timestamp="20240314 10:31:36.818" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392493838.png'/&gt;
+[log] CLICK on L[193,188]@S(0) (559 msec)
+[log]  TYPE "Shimetime Medical Supply"</msg>
+<status status="PASS" starttime="20240314 10:31:33.666" endtime="20240314 10:31:36.818"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${customer_id}</arg>
+<arg>${customers}[Customer ID]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:38.820" level="INFO">Input Text:
+D7421418574</msg>
+<msg timestamp="20240314 10:31:38.820" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392497002.png'/&gt;
+[log] CLICK on L[176,248]@S(0) (559 msec)
+[log]  TYPE "D7421418574"</msg>
+<status status="PASS" starttime="20240314 10:31:36.818" endtime="20240314 10:31:38.820"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${primary_contact}</arg>
+<arg>${customers}[Primary Contact]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:40.767" level="INFO">Input Text:
+John Shimer</msg>
+<msg timestamp="20240314 10:31:40.767" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392498984.png'/&gt;
+[log] CLICK on L[190,305]@S(0) (581 msec)
+[log]  TYPE "John Shimer"</msg>
+<status status="PASS" starttime="20240314 10:31:38.820" endtime="20240314 10:31:40.767"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${street_address}</arg>
+<arg>${customers}[Street Address]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:43.517" level="INFO">Input Text:
+12273 Volvo Parkway</msg>
+<msg timestamp="20240314 10:31:43.517" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392500970.png'/&gt;
+[log] CLICK on L[180,364]@S(0) (559 msec)
+[log]  TYPE "12273 Volvo Parkway"</msg>
+<status status="PASS" starttime="20240314 10:31:40.767" endtime="20240314 10:31:43.517"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${city}</arg>
+<arg>${customers}[City]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:45.353" level="INFO">Input Text:
+Chesapeake</msg>
+<msg timestamp="20240314 10:31:45.353" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392503666.png'/&gt;
+[log] CLICK on L[145,423]@S(0) (552 msec)
+[log]  TYPE "Chesapeake"</msg>
+<status status="PASS" starttime="20240314 10:31:43.517" endtime="20240314 10:31:45.355"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>${state}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:31:46.202" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392505519.png'/&gt;
+[log] CLICK on L[823,424]@S(0) (562 msec)</msg>
+<status status="PASS" starttime="20240314 10:31:45.356" endtime="20240314 10:31:46.205"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${state}</arg>
+<arg>${customers}[State]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:46.818" level="INFO">Input Text:
+VA</msg>
+<msg timestamp="20240314 10:31:46.818" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392506386.png'/&gt;
+[log] CLICK on L[823,424]@S(0) (65 msec)
+[log]  TYPE "VA"</msg>
+<status status="PASS" starttime="20240314 10:31:46.206" endtime="20240314 10:31:46.818"/>
+</kw>
+<kw name="Press Keys" library="RPA.Desktop">
+<arg>ENTER</arg>
+<doc>Press multiple keys down simultaneously.</doc>
+<msg timestamp="20240314 10:31:46.818" level="INFO">Pressing keys: Key.enter</msg>
+<status status="PASS" starttime="20240314 10:31:46.818" endtime="20240314 10:31:46.818"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${zip}</arg>
+<arg>${customers}[Zip]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:48.182" level="INFO">Input Text:
+23320</msg>
+<msg timestamp="20240314 10:31:48.182" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392507002.png'/&gt;
+[log] CLICK on L[866,423]@S(0) (576 msec)
+[log]  TYPE "23320"</msg>
+<status status="PASS" starttime="20240314 10:31:46.818" endtime="20240314 10:31:48.182"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${email_input}</arg>
+<arg>${customers}[Email Address]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:51.081" level="INFO">Input Text:
+shimetime41@yahoo.com</msg>
+<msg timestamp="20240314 10:31:51.081" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392508361.png'/&gt;
+[log] CLICK on L[151,480]@S(0) (569 msec)
+[log]  TYPE "shimetime41@yahoo.com"</msg>
+<status status="PASS" starttime="20240314 10:31:48.182" endtime="20240314 10:31:51.081"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${customers}[Offers Discounts]&quot; == &quot;YES&quot;">
+<kw name="Click" library="SikuliLibrary">
+<arg>${yes}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:31:51.965" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392511249.png'/&gt;
+[log] CLICK on L[139,587]@S(0) (582 msec)</msg>
+<status status="PASS" starttime="20240314 10:31:51.081" endtime="20240314 10:31:51.965"/>
+</kw>
+<status status="PASS" starttime="20240314 10:31:51.081" endtime="20240314 10:31:51.965"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" library="SikuliLibrary">
+<arg>${no}</arg>
+<doc>Click</doc>
+<status status="NOT RUN" starttime="20240314 10:31:51.965" endtime="20240314 10:31:51.965"/>
+</kw>
+<status status="NOT RUN" starttime="20240314 10:31:51.965" endtime="20240314 10:31:51.970"/>
+</branch>
+<status status="PASS" starttime="20240314 10:31:51.081" endtime="20240314 10:31:51.971"/>
+</if>
+<if>
+<branch type="IF" condition="&quot;${customers}[Non-Disclosure On File]&quot; == &quot;YES&quot;">
+<kw name="Click" library="SikuliLibrary">
+<arg>${nda}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:31:52.805" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392512119.png'/&gt;
+[log] CLICK on L[800,592]@S(0) (570 msec)</msg>
+<status status="PASS" starttime="20240314 10:31:51.973" endtime="20240314 10:31:52.806"/>
+</kw>
+<status status="PASS" starttime="20240314 10:31:51.972" endtime="20240314 10:31:52.806"/>
+</branch>
+<status status="PASS" starttime="20240314 10:31:51.972" endtime="20240314 10:31:52.806"/>
+</if>
+<kw name="Click" library="SikuliLibrary">
+<arg>${register}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:31:53.651" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392512969.png'/&gt;
+[log] CLICK on L[187,661]@S(0) (549 msec)</msg>
+<status status="PASS" starttime="20240314 10:31:52.807" endtime="20240314 10:31:53.651"/>
+</kw>
+<status status="PASS" starttime="20240314 10:31:33.666" endtime="20240314 10:31:53.651"/>
+</kw>
+<status status="PASS" starttime="20240314 10:31:33.666" endtime="20240314 10:31:53.653"/>
+</iter>
+<iter>
+<var name="${customers}">{'Company Name': 'Data Monkey Analytics', 'Customer ID': 'D9384512574', 'Primary Contact': 'Aaron Smith', 'Street Address': '3543 Adams Rd', 'City': 'Easton', 'State': 'CT', 'Zip': '06612', 'Email Add...</var>
+<kw name="Fill and submit the form for one person">
+<arg>${customers}</arg>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${customer_name}</arg>
+<arg>${customers}[Company Name]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:56.516" level="INFO">Input Text:
+Data Monkey Analytics</msg>
+<msg timestamp="20240314 10:31:56.516" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392513820.png'/&gt;
+[log] CLICK on L[193,188]@S(0) (551 msec)
+[log]  TYPE "Data Monkey Analytics"</msg>
+<status status="PASS" starttime="20240314 10:31:53.656" endtime="20240314 10:31:56.516"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${customer_id}</arg>
+<arg>${customers}[Customer ID]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:31:58.481" level="INFO">Input Text:
+D9384512574</msg>
+<msg timestamp="20240314 10:31:58.481" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392516719.png'/&gt;
+[log] CLICK on L[176,248]@S(0) (573 msec)
+[log]  TYPE "D9384512574"</msg>
+<status status="PASS" starttime="20240314 10:31:56.516" endtime="20240314 10:31:58.482"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${primary_contact}</arg>
+<arg>${customers}[Primary Contact]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:32:00.463" level="INFO">Input Text:
+Aaron Smith</msg>
+<msg timestamp="20240314 10:32:00.463" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392518668.png'/&gt;
+[log] CLICK on L[190,305]@S(0) (569 msec)
+[log]  TYPE "Aaron Smith"</msg>
+<status status="PASS" starttime="20240314 10:31:58.483" endtime="20240314 10:32:00.463"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${street_address}</arg>
+<arg>${customers}[Street Address]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:32:02.511" level="INFO">Input Text:
+3543 Adams Rd</msg>
+<msg timestamp="20240314 10:32:02.512" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392520633.png'/&gt;
+[log] CLICK on L[180,364]@S(0) (548 msec)
+[log]  TYPE "3543 Adams Rd"</msg>
+<status status="PASS" starttime="20240314 10:32:00.463" endtime="20240314 10:32:02.512"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${city}</arg>
+<arg>${customers}[City]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:32:03.930" level="INFO">Input Text:
+Easton</msg>
+<msg timestamp="20240314 10:32:03.930" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392522684.png'/&gt;
+[log] CLICK on L[145,423]@S(0) (551 msec)
+[log]  TYPE "Easton"</msg>
+<status status="PASS" starttime="20240314 10:32:02.512" endtime="20240314 10:32:03.930"/>
+</kw>
+<kw name="Click" library="SikuliLibrary">
+<arg>${state}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:32:04.792" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392524100.png'/&gt;
+[log] CLICK on L[823,424]@S(0) (555 msec)</msg>
+<status status="PASS" starttime="20240314 10:32:03.930" endtime="20240314 10:32:04.793"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${state}</arg>
+<arg>${customers}[State]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:32:05.425" level="INFO">Input Text:
+CT</msg>
+<msg timestamp="20240314 10:32:05.425" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392524967.png'/&gt;
+[log] CLICK on L[823,424]@S(0) (76 msec)
+[log]  TYPE "CT"</msg>
+<status status="PASS" starttime="20240314 10:32:04.793" endtime="20240314 10:32:05.425"/>
+</kw>
+<kw name="Press Keys" library="RPA.Desktop">
+<arg>ENTER</arg>
+<doc>Press multiple keys down simultaneously.</doc>
+<msg timestamp="20240314 10:32:05.425" level="INFO">Pressing keys: Key.enter</msg>
+<status status="PASS" starttime="20240314 10:32:05.425" endtime="20240314 10:32:05.425"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${zip}</arg>
+<arg>${customers}[Zip]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:32:06.800" level="INFO">Input Text:
+06612</msg>
+<msg timestamp="20240314 10:32:06.800" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392525651.png'/&gt;
+[log] CLICK on L[866,423]@S(0) (555 msec)
+[log]  TYPE "06612"</msg>
+<status status="PASS" starttime="20240314 10:32:05.425" endtime="20240314 10:32:06.800"/>
+</kw>
+<kw name="Input Text" library="SikuliLibrary">
+<arg>${email_input}</arg>
+<arg>${customers}[Email Address]</arg>
+<doc>Input text.
+ Image could be empty</doc>
+<msg timestamp="20240314 10:32:09.498" level="INFO">Input Text:
+mrmonkey27@gmail.com</msg>
+<msg timestamp="20240314 10:32:09.499" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392526963.png'/&gt;
+[log] CLICK on L[151,480]@S(0) (565 msec)
+[log]  TYPE "mrmonkey27@gmail.com"</msg>
+<status status="PASS" starttime="20240314 10:32:06.800" endtime="20240314 10:32:09.499"/>
+</kw>
+<if>
+<branch type="IF" condition="&quot;${customers}[Offers Discounts]&quot; == &quot;YES&quot;">
+<kw name="Click" library="SikuliLibrary">
+<arg>${yes}</arg>
+<doc>Click</doc>
+<status status="NOT RUN" starttime="20240314 10:32:09.500" endtime="20240314 10:32:09.500"/>
+</kw>
+<status status="NOT RUN" starttime="20240314 10:32:09.499" endtime="20240314 10:32:09.500"/>
+</branch>
+<branch type="ELSE">
+<kw name="Click" library="SikuliLibrary">
+<arg>${no}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:32:10.347" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392529665.png'/&gt;
+[log] CLICK on L[196,587]@S(0) (568 msec)</msg>
+<status status="PASS" starttime="20240314 10:32:09.500" endtime="20240314 10:32:10.347"/>
+</kw>
+<status status="PASS" starttime="20240314 10:32:09.500" endtime="20240314 10:32:10.347"/>
+</branch>
+<status status="PASS" starttime="20240314 10:32:09.499" endtime="20240314 10:32:10.347"/>
+</if>
+<if>
+<branch type="IF" condition="&quot;${customers}[Non-Disclosure On File]&quot; == &quot;YES&quot;">
+<kw name="Click" library="SikuliLibrary">
+<arg>${nda}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:32:11.213" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392530532.png'/&gt;
+[log] CLICK on L[800,592]@S(0) (555 msec)</msg>
+<status status="PASS" starttime="20240314 10:32:10.347" endtime="20240314 10:32:11.213"/>
+</kw>
+<status status="PASS" starttime="20240314 10:32:10.347" endtime="20240314 10:32:11.213"/>
+</branch>
+<status status="PASS" starttime="20240314 10:32:10.347" endtime="20240314 10:32:11.213"/>
+</if>
+<kw name="Click" library="SikuliLibrary">
+<arg>${register}</arg>
+<doc>Click</doc>
+<msg timestamp="20240314 10:32:12.110" level="INFO" html="true">&lt;img src='sikuli_captured/sikuliximage-1710392531412.png'/&gt;
+[log] CLICK on L[187,661]@S(0) (560 msec)</msg>
+<status status="PASS" starttime="20240314 10:32:11.213" endtime="20240314 10:32:12.110"/>
+</kw>
+<status status="PASS" starttime="20240314 10:31:53.655" endtime="20240314 10:32:12.110"/>
+</kw>
+<status status="PASS" starttime="20240314 10:31:53.654" endtime="20240314 10:32:12.110"/>
+</iter>
+<status status="PASS" starttime="20240314 10:30:01.371" endtime="20240314 10:32:12.110"/>
+</for>
+<status status="PASS" starttime="20240314 10:30:01.356" endtime="20240314 10:32:12.110"/>
+</kw>
+<status status="PASS" starttime="20240314 10:29:59.882" endtime="20240314 10:32:12.110"/>
+</test>
+<status status="PASS" starttime="20240314 10:29:54.008" endtime="20240314 10:32:12.119"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tasks</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Index">Index</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
